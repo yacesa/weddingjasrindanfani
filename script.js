@@ -2,12 +2,18 @@ const cover = document.getElementById("cover");
 const openBtn = document.getElementById("openInvitation");
 const music = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
+const video = document.getElementById("bgVideo");
 
 let musicPlaying = false;
 
 openBtn.addEventListener("click", () => {
   cover.classList.add("hide");
   document.body.classList.remove("locked");
+
+  if (video) {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  }
 
   music.play()
     .then(() => {
@@ -206,66 +212,71 @@ copyButton.addEventListener("click", async () => {
 /* =========================
    NAMA TAMU DARI LINK
 ========================= */
-
 const guestList = [
-  "Nona Sindring",
-  "Ahmad Fauzi",
-  "Siti Rahma",
-  "Budi Santoso",
-  "Dewi Lestari",
-  "Rizky Pratama",
-  "Ayu Wulandari",
-  "Fajar Nugroho",
-  "Indah Permata",
-  "Rudi Hartono",
-  "Maya Sari",
-  "Andi Saputra",
-  "Lina Marlina",
-  "Doni Setiawan",
-  "Putri Amelia",
-  "Hendra Wijaya",
-  "Novi Anggraini",
-  "Agus Salim",
-  "Tika Rahmawati",
-  "Yusuf Maulana",
-  "Rina Kurnia",
-  "Bayu Prakoso",
-  "Nanda Putri",
-  "Ilham Ramadhan",
-  "Salsa Nabila",
-  "Dika Pratama",
-  "Mega Sari",
-  "Eko Susanto",
-  "Fitri Handayani",
-  "Arif Hidayat",
-  "Dian Puspita",
-  "Rangga Saputra",
-  "Vina Oktaviani",
-  "Hafiz Alfarizi",
-  "Nur Aisyah",
-  "Joko Widodo",
-  "Sari Dewi",
-  "Bagus Setiawan",
-  "Rika Lestari",
-  "Fikri Ramadhan",
-  "Nabila Zahra",
-  "Yoga Pratama",
-  "Citra Dewi",
-  "Wahyu Saputra",
-  "Aulia Rahman",
-  "Siska Melati",
-  "Reza Prasetyo",
-  "Nina Kartika",
-  "Taufik Hidayat",
-  "Melisa Putri"
+  "Besty'q safni",
+  "Mawarni S.Pd",
+  "Febrianty S.Pd",
+  "Gita Purwanti Amd.keb",
+  "Siti hajar S.keb",
+  "Elsa pita. S.Pd",
+  "Sri sahrani S.Pd",
+  "Besty'q yuni",
+  "Besty'q dewi",
+  "Sukmawati dan pasangan",
+  "Isroyati dan Pasangan",
+  "Miranti",
+  "Hikma",
+  "Nur Jannah",
+  "Besty'q windi",
+  "Linda dan suami",
+  "Elsa",
+  "Besty'q jhulian",
+  "Fitrawati",
+  "Windiani",
+  "Sri Novita S.Pd",
+  "Elfani S.E",
+  "Sri Utami dan pasangan",
+  "Hasturi",
+  "Putry",
+  "Firdayanty",
+  "Winda/Windi",
+  "Mega dan suami",
+  "Riana S.Pd",
+  "Ranty lihawa",
+  "Windiani",
+  "Nur safna dan pasangan",
+  "Adek rima",
+  "Ibu Nurul dan suami",
+  "Ibu guru Sarah",
+  "Janah dan suami",
+  "Irfan",
+  "Fandy",
+  "Dewitriana",
+  "Ibu nona",
+  "Fahril",
+  "Wawan",
+  "Jasri",
+  "Jana dan suami",
+  "Gita dan pasangan",
+  "Umi dan pasangan",
+  "Ibu guru Gita",
+  "Yati dan pasangan",
+  "Nurazia",
+  "Mahmud dan pasangan"
 ];
 
 const urlParams = new URLSearchParams(window.location.search);
 const guestName = urlParams.get("to");
 
-if (guestName) {
-  document.querySelectorAll(".guest-name").forEach(el => {
+const guestElements = document.querySelectorAll(".guest-name");
+
+if (guestName && guestName.trim() !== "") {
+  guestElements.forEach(el => {
     el.textContent = decodeURIComponent(guestName);
+  });
+} else {
+  guestElements.forEach(el => {
+    el.style.display = "none";
   });
 }
 
