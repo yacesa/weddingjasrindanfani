@@ -630,3 +630,237 @@ footer .script {
     height: 340px;
   }
 }
+
+/* batas */
+
+/* ===== COVER FINAL RAPI ===== */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  background: #fff;
+  transition: .8s ease;
+}
+
+.cover.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+}
+
+/* FRAME */
+.cover-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ISI COVER */
+.cover-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 82px 30px 68px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.cover-top,
+.cover-middle,
+.cover-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-card .eyebrow {
+  font-size: 11px;
+  margin: 0;
+}
+
+.cover-icon {
+  width: 88px;
+  margin: 0 0 6px;
+}
+
+.cover-names {
+  font-size: 24px;
+  margin: 0;
+  gap: 4px;
+}
+
+.cover-bottom {
+  gap: 4px;
+  transform: translateY(-40px); /* naik */
+}
+
+.cover-bottom p,
+.cover-bottom h3 {
+  margin: 0;
+}
+
+.guest-name {
+  font-size: 14px;
+}
+
+.guest-address {
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.cover-date {
+  font-size: 12.5px;
+  margin: 6px 0 !important;
+}
+
+.cover .btn {
+  font-size: 12px;
+  padding: 8px 14px;
+}
+
+/* THE WEDDING */
+.cover-card .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--blue-dark);
+  letter-spacing: .02em;
+  margin: 0 0 12px;
+}
+
+/* ICON PASANGAN */
+.cover-icon {
+  width: 90px;
+  max-width: 36vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+/* NAMA PENGANTIN */
+.cover-names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  font-size: 1px; /* ← ini yang bikin lebih kecil */
+  margin: 0;
+  line-height: 1;
+}
+
+.cover-names span {
+  display: inline-block;
+}
+
+.cover-names .amp {
+  font-size: .72em;
+  color: var(--blue);
+}
+
+/* TEKS BAWAH */
+.cover-card p {
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+  color: var(--text);
+}
+
+.cover-card > p:first-of-type {
+  margin-top: 10px;
+}
+
+.guest-name {
+  font-size: 14px;
+  color: var(--blue-dark);
+  margin: 5px 0 8px;
+  transform: translateY(-25px); /* naik nama tamu */
+}
+
+.guest-address {
+  font-size: 11.5px;
+  line-height: 1.35;
+  margin: 0 0 10px;
+  max-width: 250px;
+}
+
+.cover-date {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--blue-dark) !important;
+  margin: 10px 0 12px !important;
+}
+
+.cover .btn {
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  margin-top: 2px;
+}
+
+.cover .btn i {
+  width: 16px;
+  height: 16px;
+}
+
+/* HAPUS BR YANG BIKIN JARAK */
+.cover-card br {
+  display: none;
+}
+
+/* HP KECIL */
+@media (max-width: 430px) {
+  .cover-card {
+    padding: 84px 30px 52px;
+  }
+
+  .cover-card .eyebrow {
+    font-size: 10.5px;
+    margin-bottom: 10px;
+    transform: translateY(43px);
+  }
+
+  .cover-icon {
+    width: 110px;
+    transform: translateY(50px);
+  }
+
+  .cover-names {
+    font-size: 25px;
+    margin-bottom: 17px;
+    transform: translateY(40px);
+  }
+
+  .guest-address {
+    max-width: 230px;
+  }
+}
+
+.cover .cover-names {
+  font-size: 30px !important;
+}
+
+.note {
+  font-size: 5px;
+  color: #000;
+  margin-top: 6px;
+}
+
+.note {
+  font-size: 8px !important;
+}
