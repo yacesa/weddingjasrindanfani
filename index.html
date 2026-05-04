@@ -2,10 +2,10 @@
 <html lang="id">
 <head>
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
+
   <script src="https://unpkg.com/lucide@latest"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Jasrin & Fani</title>
@@ -16,83 +16,69 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="locked">
+
   <video id="bgVideo" muted loop playsinline class="bg-video">
-  <source src="video.mp4" type="video/mp4">
-</video>
+    <source src="video.mp4" type="video/mp4">
+  </video>
 
   <div class="sparkle"></div>
 
-<div class="cover" id="cover">
+  <!-- COVER -->
+  <div class="cover" id="cover">
+    <img src="frame.png" class="cover-frame" alt="frame">
 
-  <img src="frame.png" class="cover-frame" alt="frame">
+    <div class="cover-content">
+      <div class="cover-top">
+        <span>The Wedding By Yacesa</span>
+      </div>
 
-  <div class="cover-card">
+      <div class="cover-main">
+        <img src="buka.png" class="cover-icon" alt="couple">
 
-    <div class="cover-top">
-      <span class="eyebrow">The Wedding By Yacesa</span>
+        <h1 class="cover-names">
+          <span>Jasrin</span>
+          <span class="amp">&</span>
+          <span>Fani</span>
+        </h1>
+
+        <p class="to">Kepada Yth:</p>
+        <h3 class="guest-name">Nama Tamu</h3>
+      </div>
+
+      <div class="cover-bottom">
+        <p class="guest-address">
+          Di Tempat: Desa Lakea 2 Kompleks<br>
+          Masjid Al-Hidayah
+        </p>
+
+        <p class="cover-date">Sabtu, 23 Mei 2026</p>
+
+        <button class="btn" id="openInvitation">
+          <i data-lucide="mail"></i>
+          Buka Undangan
+        </button>
+
+        <p class="note">
+          *Mohon Maaf apabila ada kesalahan penulisan nama/gelar
+        </p>
+      </div>
     </div>
-
-    <div class="cover-middle">
-      <img src="buka.png" class="cover-icon" alt="couple">
-
-      <h1 class="cover-names">
-        <span>Jasrin</span>
-        <span class="amp">&</span>
-        <span>Fani</span>
-      </h1>
-    </div>
-<p>Kepada Yth:</p>
-      <h3 class="guest-name">Nama Tamu</h3>
-    <div class="cover-bottom">
-      
-
-      <p class="guest-address">
-        Di Tempat:<br>
-        Desa Lakea 2 Kompleks <br> Masjid Al-Hidayah
-      </p>
-
-      <p class="cover-date">Sabtu, 23 Mei 2026</p>
-
-      <button class="btn" id="openInvitation">
-        <i data-lucide="mail"></i> Buka Undangan
-      </button>
-      <p class="note">
-      " tesMohon Maaf apabila ada kesalahan dalam penulisan Nama/Gelar"
-      </p>
-    </div>
-
-    
-
   </div>
 
-</div>
+  <!-- FLOATING NAV -->
+  <nav class="floating-nav">
+    <button class="music-btn" id="musicToggle">
+      <i data-lucide="music"></i>
+    </button>
 
-<nav class="floating-nav">
-  <button class="music-btn" id="musicToggle">
-    <i data-lucide="music"></i>
-  </button>
-
-  <a href="#home">
-    <i data-lucide="home"></i>
-  </a>
-
-  <a href="#couple">
-    <i data-lucide="heart"></i>
-  </a>
-
-  <a href="#event">
-    <i data-lucide="calendar"></i>
-  </a>
-
-  <a href="#rsvp">
-    <i data-lucide="check-circle"></i>
-  </a>
-
-  <a href="#gift">
-    <i data-lucide="gift"></i>
-  </a>
-</nav>
+    <a href="#home"><i data-lucide="home"></i></a>
+    <a href="#couple"><i data-lucide="heart"></i></a>
+    <a href="#event"><i data-lucide="calendar"></i></a>
+    <a href="#rsvp"><i data-lucide="check-circle"></i></a>
+    <a href="#gift"><i data-lucide="gift"></i></a>
+  </nav>
 
   <audio id="bgMusic" loop>
     <source src="satusaf.mp3" type="audio/mpeg">
@@ -100,15 +86,18 @@
 
   <main id="home" class="hero">
     <div class="hero-card reveal">
-      <div class="title-small">Yacesa - Digital</div><br>
+      <div class="title-small">Yacesa - Digital</div>
+
       <div class="names">
-  <span>Jasrin</span><br>
-  <span class="amp">&</span><br>
-  <span>Fani</span><br>
-</div>
+        <span>Jasrin</span>
+        <span class="amp">&</span>
+        <span>Fani</span>
+      </div>
+
       <p class="hero-text">
         Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan akad dan resepsi pernikahan putra-putri kami.
       </p>
+
       <div class="date-pill">Sabtu, 23 Mei 2026 • 19.30 WITA</div>
 
       <div class="countdown">
@@ -147,7 +136,8 @@
           <p>
             Putra dari<br>
             <strong>Bapak Husain Ramid</strong><br>
-            <strong>&</strong><br> <strong>Ibu Asmawati Y.R Lakuntu</strong>
+            <strong>&</strong><br>
+            <strong>Ibu Asmawati Y.R Lakuntu</strong>
           </p>
         </div>
 
@@ -159,7 +149,8 @@
           <p>
             Putri dari<br>
             <strong>Alm. Bapak Moris A. Raja</strong><br>
-           <strong>&</strong><br> <strong>Ibu Masrida L. Taim</strong>
+            <strong>&</strong><br>
+            <strong>Ibu Masrida L. Taim</strong>
           </p>
         </div>
       </div>
@@ -175,43 +166,41 @@
 
       <div class="grid two">
         <div class="card event-card reveal">
-          <h3>Akad Nikah</h3><br>
-          <div class="info-row">📅 <span>Sabtu, 23 Mei 2026</span></div><br>
-          <div class="info-row">🕢 <span>19.30 WITA</span></div><br>
+          <h3>Akad Nikah</h3>
+          <div class="info-row">📅 <span>Sabtu, 23 Mei 2026</span></div>
+          <div class="info-row">🕢 <span>19.30 WITA</span></div>
           <div class="info-row">📍 <span>Kediaman rumah Alm. Bapak Moris A. Raja, Desa Lakea 2, Kompleks Masjid Al-Hidayah</span></div>
         </div>
 
         <div class="card event-card reveal">
-          <h3>Resepsi</h3><br>
-          <div class="info-row">📅 <span>Sabtu, 23 Mei 2026</span></div><br>
-          <div class="info-row">🕢 <span>19.30 WITA - selesai</span></div><br>
+          <h3>Resepsi</h3>
+          <div class="info-row">📅 <span>Sabtu, 23 Mei 2026</span></div>
+          <div class="info-row">🕢 <span>19.30 WITA - selesai</span></div>
           <div class="info-row">📍 <span>Kediaman rumah Alm. Bapak Moris A. Raja, Desa Lakea 2, Kompleks Masjid Al-Hidayah</span></div>
         </div>
       </div>
 
       <div class="map-premium reveal">
-  <div class="map-frame">
-    <iframe
-      src="https://www.google.com/maps?q=Desa%20Lakea%202%20Kompleks%20Masjid%20Al%20Hidayah&output=embed"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=Desa%20Lakea%202%20Kompleks%20Masjid%20Al%20Hidayah&output=embed"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
 
-  <div class="map-info">
-    <div>
-      <span class="map-label">Lokasi Acara</span>
-      <h3>Kediaman Alm. Bapak Moris A. Raja</h3>
-      <p>Desa Lakea 2, Kompleks Masjid Al-Hidayah</p>
-    </div>
+        <div class="map-info">
+          <div>
+            <span class="map-label">Lokasi Acara</span>
+            <h3>Kediaman Alm. Bapak Moris A. Raja</h3>
+            <p>Desa Lakea 2, Kompleks Masjid Al-Hidayah</p>
+          </div>
 
-    <a class="btn map-btn"
-   href="https://www.google.com/maps?q=1.2285664,121.2508660"
-   target="_blank">
-  Buka Google Maps
-</a>
-  </div>
-</div>
+          <a class="btn map-btn" href="https://www.google.com/maps?q=1.2285664,121.2508660" target="_blank">
+            Buka Google Maps
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -272,6 +261,7 @@
             <h3>2010201184773</h3>
             <p>Atas Nama <strong>JASRIN H RAMID</strong></p>
           </div>
+
           <button class="btn" id="copyRek">Salin Rekening</button>
         </div>
       </div>
@@ -280,35 +270,34 @@
 
   <footer>
     <div class="script">Terima Kasih</div>
-    <p>Merupakan kebahagiaan bagi kami atas kehadiran dan doa restu Anda.</p><br><br>
+    <p>Merupakan kebahagiaan bagi kami atas kehadiran dan doa restu Anda.</p>
+
     <div class="footer-contact">
+      <p class="footer-name">Yacesa - Digital</p>
 
-  <p class="footer-name">Yacesa - Digital</p>
+      <p class="footer-desc">
+        Jasa pembuatan undangan digital premium & modern
+      </p>
 
-  <p class="footer-desc">
-    Jasa pembuatan undangan digital premium & modern
-  </p>
+      <div class="footer-wa">
+        <a href="https://wa.me/6282291316391?text=Halo%20saya%20ingin%20memesan%20undangan%20digital%0A%0ANama:%0ATanggal%20Acara:%0APaket:%0AReferensi:" target="_blank" class="wa-btn">
+          <i data-lucide="phone"></i>
+          082291316391
+        </a>
 
-  <div class="footer-wa">
-    <a href="https://wa.me/6282291316391?text=Halo%20saya%20ingin%20memesan%20undangan%20digital%0A%0ANama:%0ATanggal%20Acara:%0APaket:%0AReferensi:" target="_blank" class="wa-btn">
-      <i data-lucide="phone"></i>
-      082291316391
-    </a>
+        <a href="https://wa.me/6282292120735?text=Halo%20saya%20ingin%20memesan%20undangan%20digital%0A%0ANama:%0ATanggal%20Acara:%0APaket:%0AReferensi:" target="_blank" class="wa-btn">
+          <i data-lucide="phone"></i>
+          082292120735
+        </a>
+      </div>
 
-    <a href="https://wa.me/6282292120735?text=Halo%20saya%20ingin%20memesan%20undangan%20digital%0A%0ANama:%0ATanggal%20Acara:%0APaket:%0AReferensi:" target="_blank" class="wa-btn">
-      <i data-lucide="phone"></i>
-      082292120735
-    </a>
-  </div>
-
-  <a href="https://yacesa.github.io/yaser" target="_blank" class="footer-link">
-    Lihat Portofolio
-  </a>
-
-</div>
+      <a href="https://yacesa.github.io/yaser" target="_blank" class="footer-link">
+        Lihat Portofolio
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
-</body>
 
+</body>
 </html>

@@ -6,46 +6,63 @@ const video = document.getElementById("bgVideo");
 
 let musicPlaying = false;
 
-openBtn.addEventListener("click", () => {
-  cover.classList.add("hide");
-  document.body.classList.remove("locked");
+/* =========================
+   BUKA UNDANGAN
+========================= */
+if (openBtn) {
+  openBtn.addEventListener("click", () => {
+    cover.classList.add("hide");
+    document.body.classList.remove("locked");
 
-  if (video) {
-    video.currentTime = 0;
-    video.play().catch(() => {});
-  }
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
 
-  music.play()
-    .then(() => {
-      musicPlaying = true;
-      musicToggle.innerHTML = `<i data-lucide="volume-2"></i>`;
-      lucide.createIcons();
-    })
-    .catch(() => {
-      musicPlaying = false;
+    music.play()
+      .then(() => {
+        musicPlaying = true;
+        musicToggle.innerHTML = `<i data-lucide="volume-2"></i>`;
+        lucide.createIcons();
+      })
+      .catch(() => {
+        musicPlaying = false;
+        musicToggle.innerHTML = `<i data-lucide="music"></i>`;
+        lucide.createIcons();
+      });
+  });
+}
+
+/* =========================
+   TOGGLE MUSIK
+========================= */
+if (musicToggle) {
+  musicToggle.addEventListener("click", () => {
+    if (musicPlaying) {
+      music.pause();
       musicToggle.innerHTML = `<i data-lucide="music"></i>`;
-      lucide.createIcons();
-    });
-});
+      musicPlaying = false;
+    } else {
+      music.play();
+      musicToggle.innerHTML = `<i data-lucide="volume-2"></i>`;
+      musicPlaying = true;
+    }
 
-musicToggle.addEventListener("click", () => {
-  if (musicPlaying) {
-    music.pause();
-    musicToggle.innerHTML = `<i data-lucide="music"></i>`;
-    musicPlaying = false;
-  } else {
-    music.play();
-    musicToggle.innerHTML = `<i data-lucide="volume-2"></i>`;
-    musicPlaying = true;
-  }
+    lucide.createIcons();
+  });
+}
 
-  lucide.createIcons();
-});
-
+/* =========================
+   COUNTDOWN
+========================= */
 const targetDate = new Date("2026-05-23T19:30:00+08:00").getTime();
 
 function setText(id, value) {
-  document.getElementById(id).textContent = String(value).padStart(2, "0");
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.textContent = String(value).padStart(2, "0");
+  }
 }
 
 function updateCountdown() {
@@ -74,6 +91,9 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+/* =========================
+   ANIMASI REVEAL
+========================= */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -86,30 +106,34 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
+/* =========================
+   RSVP WHATSAPP
+========================= */
 const rsvpForm = document.getElementById("rsvpForm");
 
-rsvpForm.addEventListener("submit", function(e) {
-  e.preventDefault();
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  const name = document.getElementById("guestName").value.trim();
-  const attendance = document.getElementById("attendance").value;
-  const count = document.getElementById("guestCount").value;
-  const message = document.getElementById("guestMessage").value.trim();
+    const name = document.getElementById("guestName").value.trim();
+    const attendance = document.getElementById("attendance").value;
+    const count = document.getElementById("guestCount").value;
+    const message = document.getElementById("guestMessage").value.trim();
 
-  const waText =
-    `Assalamualaikum, saya ingin konfirmasi kehadiran.%0A%0A` +
-    `Nama: ${encodeURIComponent(name)}%0A` +
-    `Kehadiran: ${encodeURIComponent(attendance)}%0A` +
-    `Jumlah Tamu: ${encodeURIComponent(count)}%0A` +
-    `Ucapan: ${encodeURIComponent(message)}`;
+    const waText =
+      `Assalamualaikum, saya ingin konfirmasi kehadiran.%0A%0A` +
+      `Nama: ${encodeURIComponent(name)}%0A` +
+      `Kehadiran: ${encodeURIComponent(attendance)}%0A` +
+      `Jumlah Tamu: ${encodeURIComponent(count)}%0A` +
+      `Ucapan: ${encodeURIComponent(message)}`;
 
-  window.open(`https://wa.me/6282293939218?text=${waText}`, "_blank");
-});
+    window.open(`https://wa.me/6282293939218?text=${waText}`, "_blank");
+  });
+}
 
 /* =========================
    BUKU TAMU GOOGLE SHEET
 ========================= */
-
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzozjlrVaW8o9KBXIj-gnVR3yT4o8UipnAsLVmsl-qeDsU_TeoWJrrKY-Yrq6KNeCdi/exec";
 
 const wishForm = document.getElementById("wishForm");
@@ -130,6 +154,8 @@ function escapeHTML(str) {
 }
 
 async function loadWishes() {
+  if (!wishList) return;
+
   wishList.innerHTML = `
     <div class="wish">
       <p>Memuat ucapan...</p>
@@ -165,49 +191,52 @@ async function loadWishes() {
   }
 }
 
-wishForm.addEventListener("submit", async function(e) {
-  e.preventDefault();
+if (wishForm) {
+  wishForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-  const name = document.getElementById("wishName").value.trim();
-  const text = document.getElementById("wishText").value.trim();
+    const name = document.getElementById("wishName").value.trim();
+    const text = document.getElementById("wishText").value.trim();
 
-  if (!name || !text) return;
+    if (!name || !text) return;
 
-  try {
-    await fetch(SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify({
-        nama: name,
-        ucapan: text
-      })
-    });
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          nama: name,
+          ucapan: text
+        })
+      });
 
-    wishForm.reset();
-    loadWishes();
+      wishForm.reset();
+      loadWishes();
 
-  } catch (error) {
-    alert("Maaf, ucapan belum berhasil dikirim.");
-  }
-});
+    } catch (error) {
+      alert("Maaf, ucapan belum berhasil dikirim.");
+    }
+  });
+}
 
 loadWishes();
 
 /* =========================
    SALIN REKENING
 ========================= */
-
 const copyButton = document.getElementById("copyRek");
 
-copyButton.addEventListener("click", async () => {
-  await navigator.clipboard.writeText("2010201184773");
+if (copyButton) {
+  copyButton.addEventListener("click", async () => {
+    await navigator.clipboard.writeText("2010201184773");
 
-  const oldText = copyButton.textContent;
-  copyButton.textContent = "Berhasil Disalin";
+    const oldText = copyButton.textContent;
+    copyButton.textContent = "Berhasil Disalin";
 
-  setTimeout(() => {
-    copyButton.textContent = oldText;
-  }, 1600);
-});
+    setTimeout(() => {
+      copyButton.textContent = oldText;
+    }, 1600);
+  });
+}
 
 /* =========================
    NAMA TAMU DARI LINK
