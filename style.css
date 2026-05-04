@@ -860,12 +860,11 @@ footer .script {
 .hero-top {
   width: 100%;
   text-align: center;
-  margin-bottom: 10px;
-  margin-bottom: 150px; /* atur jarak ke nama */
+  margin-bottom: 120px; /* jarak normal ke nama */
 }
 
 .title-small {
-  font-size: 13px;
+  font-size: 10px;   /* ukuran kecil elegan */
   font-weight: 800;
   color: var(--blue);
   letter-spacing: .08em;
